@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Profile</title>
+    <title>Customer List</title>
     <link rel="stylesheet" href="/assets/styles/dashboardstyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    
@@ -48,22 +48,9 @@
     <!---sidebar-->
     
         <div class="sidebar">
-            <center>
-               
-
-                                   
-                <img src="" class="profile-img" alt="">
-               <h4><%=data[0].email%></h4>
-               
-                
-                
-            </center>
-            <a href="/checkorder"><i class="fa fa-desktop" aria-hidden="true"></i><span>Show Order</span></a>
-            <a href="/library"><i class="fa fa-cogs" aria-hidden="true"></i><span>Library</span></a>
-            <a href="/studentDashboard/showcourses/<%=data[0].email%>"><i class="fa fa-table" aria-hidden="true"></i><span>Show Registration</span></a>
-            <a href="/studentDashboard/showborrow/<%=data[0].email%>"><i class="fa fa-th" aria-hidden="true"></i><span>Show Borrowed Book</span></a>
-            <a href="/studentDashboard/showskill/<%=data[0].uid%>"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Show Upload</span></a>
-            <a href="/showorder/<%=data[0].uid%>"><i class="fa fa-sliders-h" aria-hidden="true"></i><span>Show Order</span></a>
+            
+            <a href="/admindashboard"><i class="fa fa-desktop" aria-hidden="true"></i><span>Dashboard</span></a>
+            
            
             
         </div>
@@ -71,6 +58,35 @@
         
 <div class="content">
    
+   <div class="tableform1">
+    <table border="1">
+        <tr>
+            
+            <td> Book Id </td>
+            <td>Book Name</td>
+            <td>Price type</td>
+            <td>Email</td>
+            <td>Action</td>
+        </tr>
+
+        <% for(var i=0; i< data.length; i++ ){ %>
+        <tr>
+            <td><%= data[i].bookid %></td>
+            <td><%= data[i].title %></td>
+            <td><%= data[i].price %></td>
+            <td><%= data[i].email %></td>
+            
+            <td>
+               
+                <a href="/">Accept Order</a> 
+                
+                 
+                 
+            </td>
+        </tr>
+        <% } %>
+    </table>
+   </div>
 </div>
 
 
