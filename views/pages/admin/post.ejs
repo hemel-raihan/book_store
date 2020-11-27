@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <link rel="stylesheet" href="/assets/styles/post.css">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            
+        </div>
+
+        <div class="form">
+      
+        <h4>Add Post</h4>
+        <form name="myForm" method="post" enctype="multipart/form-data">
+        
+        <font color="green"> <p> Book Title :</p><input type="text" id="title" name="title"></font>
+       
+        <font color="green"> <p> Upload Photo :</p><input type="file" id="photo" name="file"></font>
+
+        <font color="green"> <p> Book Price :</p><input type="text" id="price" name="price"></font>
+
+        <font color="green"> <p> Book Category :</p><input type="text" id="Category" name="Category"></font>
+      
+       <font color="green"> <p> Book Aurthor :</p><input type="text" id="aurthor" name="aurthor"></font>
+        
+       <font color="green"> <p> Book description :</p><input type="text" id="description" name="description"></font>
+       <input type="hidden" name="id" value="<%=data[0].id%>">
+       
+        <input type="submit" value="upload">
+       </form>
+      
+       </div>
+       
+       </div>
+
+       <script>
+
+        var my_form = document.forms.myForm;
+
+        my_form.onsubmit = function(){
+            var title = document.getElementById("title").value;
+              var photo = document.getElementById("photo").value;
+              var description = document.getElementById("description").value;
+              
+              if (title == "" || photo == "" || description == "") {
+                alert("every form must be filled out");
+                return false;
+              }
+              
+        };
+
+    
+    </script>
+</body>
+</html>
