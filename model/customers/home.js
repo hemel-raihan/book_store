@@ -10,4 +10,12 @@ module.exports ={
         });
     },
 
+    PostInfo: function(callback) {
+        var sql = "select * from post ";
+
+        db.getResults(sql, function(status) {
+            callback(status);
+        });
+    },
+
 }

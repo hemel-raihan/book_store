@@ -13,14 +13,21 @@ router.get('/',(req,res)=>{
         };
         home.ProfileInfo(data, function(results) {
             req.session.email =  data.email;
-            res.render('pages/customers/home', { data: results });
+            var profileinfo = results;
+            home.PostInfo(function(result) {
+            var postinfo = result;
+            res.render('pages/customers/home', { data: profileinfo, value: postinfo });
+          
         });
+    });
        // res.render('pages/student/studentDashboard',data);
     }
     else{
         res.redirect('/studentlogin');
     }
     });
+
+    
 
 
 module.exports = router;

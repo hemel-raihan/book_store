@@ -13,6 +13,7 @@ const adminreg = require('./controller/admin/adminreg');
 const customerlist = require('./controller/admin/customerlist');
 const home = require('./controller/customers/home');
 const post = require('./controller/admin/post');
+const showpost = require('./controller/admin/showpost');
 
 
 const app = express();
@@ -32,10 +33,6 @@ const middleware = [
 
 app.use(middleware);
 app.use('/assets', express.static('assets'));
-/*app.use(fileupload({
-    useTempFiles: true,
-    tempFileDir: '/tmp/'
-}));*/
 app.use(fileupload());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(exSession({secret: 'my secret value', saveUninitialized: true, resave: false }));
@@ -49,6 +46,7 @@ app.use('/adminreg',adminreg);
 app.use('/customerlist',customerlist);
 app.use('/home',home);
 app.use('/post',post);
+app.use('/showpost',showpost);
 
 
 const PORT = process.env.PORT || 5050;
