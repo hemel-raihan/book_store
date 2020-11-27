@@ -12,7 +12,7 @@ module.exports =
 
     insert: function(user, callback) {
       
-        var sql = "insert into post VALUES ('', '" + user.title + "' , '" + user.file + "' , '" + user.price + "' , '" + user.category + "' , '" + user.aurthor + "' , '" + user.description + "' , '" + user.id + "')";
+        var sql = "insert into post VALUES ('', '" + user.title + "' , '" + user.file + "' , '" + user.price + "' , '" + user.description + "'  , '" + user.category + "' , '" + user.aurthor + "' , '" + user.id + "')";
 		
         
 

@@ -27,6 +27,22 @@ router.get('/',(req,res)=>{
     }
     });
 
+
+    router.get('/postdetails/:id',(req,res)=>{
+        var value = {
+            email: req.session.email
+          
+        };
+        home.ProfileInfo(value, function(results) {
+            req.session.email =  value.email;
+            var profileinfo = results;
+        home.postdetails(req.params.id, function(result) {
+            
+        res.render('pages/customers/postdetails', { data: result, values: profileinfo });
+
+    });
+});
+});
     
 
 

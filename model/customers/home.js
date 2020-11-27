@@ -2,8 +2,8 @@ const db = require('../db');
 
 module.exports ={
 
-    ProfileInfo: function(data, callback) {
-        var sql = "select * from cregistration where email = '" + data.email + "'";
+    ProfileInfo: function(value, callback) {
+        var sql = "select * from cregistration where email = '" + value.email + "'";
 
         db.getResults(sql, function(status) {
             callback(status);
@@ -12,6 +12,14 @@ module.exports ={
 
     PostInfo: function(callback) {
         var sql = "select * from post ";
+
+        db.getResults(sql, function(status) {
+            callback(status);
+        });
+    },
+
+    postdetails: function(id, callback) {
+        var sql = "select * from post where id = '" + id + "'" ;
 
         db.getResults(sql, function(status) {
             callback(status);

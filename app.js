@@ -14,6 +14,8 @@ const customerlist = require('./controller/admin/customerlist');
 const home = require('./controller/customers/home');
 const post = require('./controller/admin/post');
 const showpost = require('./controller/admin/showpost');
+const order = require('./controller/customers/order');
+
 
 
 const app = express();
@@ -47,6 +49,7 @@ app.use('/customerlist',customerlist);
 app.use('/home',home);
 app.use('/post',post);
 app.use('/showpost',showpost);
+app.use('/order',order);
 
 
 const PORT = process.env.PORT || 5050;
